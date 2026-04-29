@@ -1,5 +1,4 @@
 /**
- * 
  * @param {*} num1, first number to add. 
  * @param {*} num2, second number to add. 
  * @param {*} add, boolean value to tell the function what to do. 
@@ -7,10 +6,9 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = 0;
-
+        // Use 'let' so the variable can be reassigned
+        let result = 0; 
         result = num1 + num2;
-
         return result;
     }
     else {
@@ -19,17 +17,17 @@ function sumValues(num1, num2, add) {
 }
 
 /**
- * 
  * @param {*} prices, an array of the original price.
  * @param {*} discount, a number between 0-1 to represent the discount. 
- * @returns An array of each price's new price, after the discount is applied. Or false, if prices array is empty.
+ * @returns An array of each price's new price, after the discount is applied.
  */
 function discountPrices(prices, discount) {
-    const discounted = []
+    const discounted = [];
     const length = prices.length;
-    let discountedPrice = 0
+    
     for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
+        // Change += to = to avoid cumulative addition
+        let discountedPrice = prices[i] * (1 - discount);
         discounted.push(discountedPrice);
     }
 
